@@ -67,7 +67,7 @@ def replyRandom(requester,keyword):
     intImageTimestamp=int(imageTimestamp)
     strImageTimestamp=str(intImageTimestamp)
     # 目标文件路径
-    randomWeaponData=os.path.abspath('..')+'splatoon2_bot_core'+"/data/random-weapon-room.json"
+    randomWeaponData=os.path.abspath('..')+'/splatoon2_bot_core'+"/data/random-weapon-room.json"
     finalRandomDir="./final-random-weapon-image/"
     finalRandomImage=finalRandomDir+strImageTimestamp+'.png'    
     tmpStageDir="./tmp-random-stage/"
