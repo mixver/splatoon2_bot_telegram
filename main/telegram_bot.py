@@ -46,6 +46,8 @@ def main():
 t=time.time()
 def echo(bot):
     global update_id
+    def anyIn(keywords: [str]) -> bool:
+        return any(keyword in update.message.text for keyword in keywords)
     # 在最后一个update_id之后请求更新
     for update in bot.get_updates(offset=update_id, timeout=10):
         update_id = update.update_id + 1
@@ -73,7 +75,8 @@ def echo(bot):
                 if update.message.text.startswith('/查询下个单排'):
                     mode = API_RANKED
                     replyBattle(update,mode,int(t),update.message.text)
-                if update.message.text.startswith('/查询下个组排'):
+                # if update.message.text.startswith('/查询下个组排'):
+                if anyIn("组排"):
                     mode = API_LEAGUE
                     replyBattle(update,mode,int(t),update.message.text)
         
